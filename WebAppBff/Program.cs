@@ -10,8 +10,12 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+app.MapGet("getValueFromConfig", (IConfiguration configuration) => {
+    return configuration["testConf:inner:value"];
+});
+
 app.MapGet("products",  async (HttpClient client) => {
-    var str = await client.GetStringAsync("http://catalogapi:8080/products");
+    var str = await client.GetStringAsync("http://catalogapi/products");
     return str;
 });
 

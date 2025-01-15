@@ -3,4 +3,10 @@
 GET {{WebAppBff_HostAddress}}/weatherforecast/
 Accept: application/json
 
+
+
+###
+
+GET {{WebAppBff_HostAddress}}/getValueFromConfig
+
 ###
