@@ -1,0 +1,6 @@
+@WebAppBff_HostAddress = http://localhost:5183
+
+GET {{WebAppBff_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

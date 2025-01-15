@@ -1,4 +1,4 @@
-@CatalogApi_HostAddress = https://localhost:7078
+@CatalogApi_HostAddress = http://localhost:9833
 
 ###
 
@@ -17,8 +17,8 @@ Content-Type: application/json
 Accept:application/json
 
 {
-  "name": "Product 3",
-  "price": 100
+  "name": "Product 22",
+  "price": 2222
 }
 ###
 

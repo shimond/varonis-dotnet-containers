@@ -1,0 +1,37 @@
+services:
+  webappbff:
+    container_name: webappbff
+    image: ${DOCKER_REGISTRY-}webappbff
+    build:
+      context: .
+      dockerfile: WebAppBff/Dockerfile
+    networks:
+        - patient_monitoring_network
+
+  catalogapi:
+    container_name: catalogapi
+    image: ${DOCKER_REGISTRY-}catalogapi
+    build:
+      context: .
+      dockerfile: CatalogApi/Dockerfile
+    networks:
+        - patient_monitoring_network
+  
+  sqlserver:
+     image: mcr.microsoft.com/mssql/server:2019-latest
+     container_name: sqlserver
+     ports:
+       - "9933:1433"       # SQL Server default port
+     environment:
+       SA_PASSWORD: "YourStrong!Password"  # Set a strong password for the SA user
+       ACCEPT_EULA: "Y"  
+     networks:
+        - patient_monitoring_network
+    
+
+networks:
+  patient_monitoring_network:
+
+
+
+
