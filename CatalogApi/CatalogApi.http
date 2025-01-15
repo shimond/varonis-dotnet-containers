@@ -1,0 +1,28 @@
+@CatalogApi_HostAddress = https://localhost:7078
+
+###
+
+GET {{CatalogApi_HostAddress}}/products/{id}
+Content-Type: application/json
+
+###
+
+GET {{CatalogApi_HostAddress}}/products/TestTime
+Content-Type: application/json
+
+
+###
+POST {{CatalogApi_HostAddress}}/products
+Content-Type: application/json
+Accept:application/json
+
+{
+  "name": "Product 3",
+  "price": 100
+}
+###
+
+GET {{CatalogApi_HostAddress}}/products
+ContentType: application/json
+
+###
